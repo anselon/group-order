@@ -28,7 +28,7 @@
 		  		<form ng-submit="addOrder()" style="margin-top:30px;">
 		  			<h3> Create a new order. </h3>
 		  			<div class="form-group">
-		  				<input type="text" class="form-control" ng-model="title" placeholder="Title"></input>
+		  				<input type="text" class="form-control" ng-model="title" placeholder="Title" required='required'></input>
 		  			</div>
 
 		  			<button type="submit" class="btn btn-primary">Create Order</button>
@@ -47,10 +47,10 @@
 		  		<form ng-submit="addFoodItem()" style="margin-top:30px;">
 		  			<h3> Add a new food item </h3>
 		  			<div class="form-group">
-		  				<input type="text" class="form-control" ng-model="name"placeholder="Name"></input>
+		  				<input type="text" class="form-control" ng-model="foodName"placeholder="Name" required='required'></input>
 		  			</div>
 		  			<div class="form-group">
-		  				<input type="text" class="form-control" ng-model="price" placeholder="Price"></input>
+		  				<input type="text" class="form-control" ng-model="price" placeholder="Price" required='required'></input>
 		  			</div>
 		  		
 
@@ -59,16 +59,16 @@
 		  	</div>
 
 		  	<div class="col-md-6">
-		  		<h3> The Order </h3>
-		  		<div ng-repeat="foodItem in foodItems">
+		  		<h3> {{order.title}} </h3>
+		  		<div ng-repeat="foodItem in order.foodItems">
 			  		<span style="font-size:20px;">
-			  		{{foodItem.name}}
+			  		{{foodItem.foodName}}
 			  		</span>
 			  		<span style="font-size:20px;">
 			  		{{foodItem.price}}
 			  		</span>
 			  	</div>
-			  	<!--<h2> Total: {{foodItems.total}}</h2>-->
+			  <!--<h2> Total: //{{foodItems.total}}</h2>-->
 
 		  	</div>
 		 </div>
